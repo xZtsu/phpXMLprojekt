@@ -41,6 +41,7 @@ foreach($feed->channel->item as $item){
     echo "<li>";
     echo "<a href='$item->link' target='_blank'>".$item->title."</a>";
     echo $item->description;
+    echo "</br>";
     echo "kuupäev: ".$item->pubDate;
     echo "</li>";
 }
