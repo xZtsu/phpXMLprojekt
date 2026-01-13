@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<opilased>
+    <opilane>
+        <nimi>Pedro</nimi>
+        <isikukood>12345678</isikukood>
+        <eriala>Tarkvara arendaja</eriala>
+        <elukoht>
+            <linn>Tallinn</linn>
+            <maakond>Harjumaa</maakond>
+        </elukoht>
+    </opilane>
+    <opilane>
+        <nimi>Peeter</nimi>
+        <isikukood>41231263</isikukood>
+        <eriala>Klienditeenindaja</eriala>
+        <elukoht>
+            <linn>Tartu</linn>
+            <maakond>Tartumaa</maakond>
+        </elukoht>
+    </opilane>
+    <opilane>
+        <nimi>Kaspar</nimi>
+        <isikukood>84820183</isikukood>
+        <eriala>Töötu</eriala>
+        <elukoht>
+            <linn>Tallinn</linn>
+            <maakond>Harjumaa</maakond>
+        </elukoht>
+    </opilane>
+    <opilane>
+        <nimi>Sugma</nimi>
+        <isikukood>95287187</isikukood>
+        <eriala>Kokk</eriala>
+        <elukoht>
+            <linn>Paide</linn>
+            <maakond>Järvamaa</maakond>
+        </elukoht>
+    </opilane>
+    <opilane>
+        <nimi>Michael</nimi>
+        <isikukood>01827583</isikukood>
+        <eriala>Jurist</eriala>
+        <elukoht>
+            <linn>Kiili</linn>
+            <maakond>Harjumaa</maakond>
+        </elukoht>
+    </opilane>
+
+</opilased>
