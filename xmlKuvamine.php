@@ -27,8 +27,8 @@ function LisaOpilane()
     $elukoht->appendChild($xmlDoc->createElement("maakond", $_POST["maakond"]));
     $opilane->appendChild($elukoht);
 
-    // <pilt>
-    $opilane->appendChild($xmlDoc->createElement("pilt"));
+
+
 
     // AINED (multiple!)
     for ($i = 0; $i < count($_POST["nimetus"]); $i++) {
@@ -39,6 +39,30 @@ function LisaOpilane()
             $opilane->appendChild($aine);
         }
     }
+
+
+    $pildiNimi = "";
+
+    if (!empty($_FILES["pilt"]["name"])) {
+        $kaust = "pildid/";
+        if (!is_dir($kaust)) {
+            mkdir($kaust, 0777, true);
+        }
+
+        $failiExt = strtolower(pathinfo($_FILES["pilt"]["name"], PATHINFO_EXTENSION));
+        $lubatud = ["jpg", "jpeg", "png", "gif"];
+
+        if (in_array($failiExt, $lubatud)) {
+            $pildiNimi = uniqid("opilane_") . "." . $failiExt;
+            move_uploaded_file($_FILES["pilt"]["tmp_name"], $kaust . $pildiNimi);
+        }
+    }
+
+// <pilt> koos sisuga
+    $pilt = $xmlDoc->createElement("pilt", $pildiNimi);
+    $opilane->appendChild($pilt);
+
+
 
     $xmlDoc->save("opilased.xml");
 }
@@ -115,6 +139,7 @@ foreach($tulemus as $opilane){
         echo $aine->nimetus . " (hinne " . $aine->hinne . ")<br>";
     }
     echo "</td>";
+
         echo "</tr>";
     }
     echo "</table>";
@@ -128,6 +153,8 @@ foreach($tulemus as $opilane){
         <th>Eriala</th>
         <th>Elukoht</th>
         <th>Aine</th>
+        <th>Pilt</th>
+
     </tr>
     <?php
     foreach($opilased->opilane as $opilane){
@@ -141,7 +168,14 @@ foreach($tulemus as $opilane){
         foreach ($opilane->aine as $aine) {
             echo $aine->nimetus . " (hinne " . $aine->hinne . ")<br>";
         }
+        echo "<td>";
+        if (!empty($opilane->pilt)) {
+            echo "<img src='pildid/".$opilane->pilt."' width='80'>";
+        } else {
+            echo "—";
+        }
         echo "</td>";
+
 
         echo "</tr>";
     }
@@ -150,7 +184,7 @@ foreach($tulemus as $opilane){
 </table>
 <h2>Õpilase sisestamine</h2>
 <table>
-    <form action="" method="post" name="vorm1">
+    <form action="" method="post" name="vorm1" enctype="multipart/form-data">
         <tr>
             <td><label for="nimi">Nimi:</label></td>
             <td><input type="text" name="nimi" id="nimi" ></td>
@@ -187,6 +221,10 @@ foreach($tulemus as $opilane){
         <tr>
             <td>Hinne 2:</td>
             <td><input type="text" name="hinne[]"></td>
+        </tr>
+        <tr>
+            <td><label for="pilt">Pilt:</label></td>
+            <td><input type="file" name="pilt" id="pilt"></td>
         </tr>
 
 
