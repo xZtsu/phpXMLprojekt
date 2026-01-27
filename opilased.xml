@@ -1,49 +1,40 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <opilased>
-    <opilane>
-        <nimi>Pedro</nimi>
-        <isikukood>12345678</isikukood>
-        <eriala>Tarkvara arendaja</eriala>
-        <elukoht>
-            <linn>Tallinn</linn>
-            <maakond>Harjumaa</maakond>
-        </elukoht>
-    </opilane>
-    <opilane>
-        <nimi>Peeter</nimi>
-        <isikukood>41231263</isikukood>
-        <eriala>Klienditeenindaja</eriala>
-        <elukoht>
-            <linn>Tartu</linn>
-            <maakond>Tartumaa</maakond>
-        </elukoht>
-    </opilane>
-    <opilane>
-        <nimi>Kaspar</nimi>
-        <isikukood>84820183</isikukood>
-        <eriala>Töötu</eriala>
-        <elukoht>
-            <linn>Tallinn</linn>
-            <maakond>Harjumaa</maakond>
-        </elukoht>
-    </opilane>
-    <opilane>
-        <nimi>Sugma</nimi>
-        <isikukood>95287187</isikukood>
-        <eriala>Kokk</eriala>
-        <elukoht>
-            <linn>Paide</linn>
-            <maakond>Järvamaa</maakond>
-        </elukoht>
-    </opilane>
-    <opilane>
-        <nimi>Michael</nimi>
-        <isikukood>01827583</isikukood>
-        <eriala>Jurist</eriala>
-        <elukoht>
-            <linn>Kiili</linn>
-            <maakond>Harjumaa</maakond>
-        </elukoht>
-    </opilane>
+  <opilane>
+    <nimi>Juku</nimi>
+    <isikukood>1256987</isikukood>
+    <eriala>Tarkvara arendaja</eriala>
+    <elukoht>
+      <linn>Tallinn</linn>
+      <maakond>Harjumaa</maakond>
+    </elukoht>
+    <pilt>
 
-</opilased>
+    </pilt>
+    <aine>
+      <nimetus>Matemaatika</nimetus>
+      <hinne>3</hinne>
+    </aine>
+    <aine>
+      <nimetus>Kehaline kasvatus</nimetus>
+      <hinne>4</hinne>
+    </aine>
+  </opilane>
+  <opilane>
+    <nimi>Henry</nimi>
+    <isikukood>56987256</isikukood>
+    <eriala>Tarkvara arendaja</eriala>
+    <elukoht>
+      <linn>Tartu</linn>
+      <maakond>Tartumaa</maakond>
+    </elukoht>
+    <aine>
+      <nimetus>Informaatika</nimetus>
+      <hinne>5</hinne>
+    </aine>
+    <aine>
+      <nimetus>Eesti Keel</nimetus>
+      <hinne>2</hinne>
+    </aine>
+  </opilane>
+<opilane><nimi>robin</nimi><isikukood>123123</isikukood><eriala>Kasko kindlustus</eriala><elukoht><linn>Tartu</linn><maakond>Tartumaa</maakond></elukoht><pilt/><aine><nimetus>Eesti keel</nimetus><hinne>2</hinne></aine><aine><nimetus>Matemaatika</nimetus><hinne>5</hinne></aine></opilane></opilased>
