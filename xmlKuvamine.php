@@ -90,7 +90,17 @@ function erialaOtsing($paring){
         } else if (substr(strtolower($opilane->isikukood), 0, strlen($paring))
             == strtolower($paring)) {
             array_push($tulemus, $opilane);
-        }
+        } else {
+            // check each aine->nimetus
+            foreach($opilane->aine as $aine) {
+                if (substr(strtolower($aine->nimetus), 0, strlen($paring))
+                    == strtolower($paring)) {
+                    array_push($tulemus, $opilane);
+
+                }
+            }}
+
+
     }
     return $tulemus;
 }
@@ -111,7 +121,7 @@ function erialaOtsing($paring){
 ?>
 <form action="?" method="post">
     <label for="otsing">Otsi:</label>
-    <input type="text" name="otsing" id="otsing" placeholder="Nimi | Eriala | isikukood">
+    <input type="text" name="otsing" id="otsing" placeholder="Nimi | Eriala | isikukood | Aine">
     <input type="submit" value="OK">
 </form>
 <?php
@@ -206,22 +216,27 @@ foreach($tulemus as $opilane){
             <td><input type="text" name="maakond" id="maakond" ></td>
         </tr>
         <tr>
-        <tr>
-            <td>Aine nimetus 1:</td>
-            <td><input type="text" name="nimetus[]"></td>
+            <td>Aine 1:</td>
+            <td>
+                <input type="text" name="nimetus[]" placeholder="Aine nimetus">
+                <select name="hinne[]">
+                    <option value="">Hinne</option>
+                    <?php for ($i = 0; $i <= 5; $i++) echo "<option value='$i'>$i</option>"; ?>
+                </select>
+            </td>
         </tr>
+
         <tr>
-            <td>Hinne 1:</td>
-            <td><input type="text" name="hinne[]"></td>
+            <td>Aine 2:</td>
+            <td>
+                <input type="text" name="nimetus[]" placeholder="Aine nimetus">
+                <select name="hinne[]">
+                    <option value="">Hinne</option>
+                    <?php for ($i = 0; $i <= 5; $i++) echo "<option value='$i'>$i</option>"; ?>
+                </select>
+            </td>
         </tr>
-        <tr>
-            <td>Aine nimetus 2:</td>
-            <td><input type="text" name="nimetus[]"></td>
-        </tr>
-        <tr>
-            <td>Hinne 2:</td>
-            <td><input type="text" name="hinne[]"></td>
-        </tr>
+
         <tr>
             <td><label for="pilt">Pilt:</label></td>
             <td><input type="file" name="pilt" id="pilt"></td>
